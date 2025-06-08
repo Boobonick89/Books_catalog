@@ -42,6 +42,9 @@
             searchBook = new Button();
             txtSearch = new TextBox();
             label5 = new Label();
+            btnReset = new Button();
+            butnSave = new Button();
+            butnLoad = new Button();
             SuspendLayout();
             // 
             // label1
@@ -122,7 +125,7 @@
             // 
             // addBook
             // 
-            addBook.Location = new Point(386, 384);
+            addBook.Location = new Point(361, 299);
             addBook.Name = "addBook";
             addBook.Size = new Size(119, 23);
             addBook.TabIndex = 9;
@@ -132,7 +135,7 @@
             // 
             // removeBook
             // 
-            removeBook.Location = new Point(617, 384);
+            removeBook.Location = new Point(361, 335);
             removeBook.Name = "removeBook";
             removeBook.Size = new Size(112, 23);
             removeBook.TabIndex = 10;
@@ -142,7 +145,7 @@
             // 
             // searchBook
             // 
-            searchBook.Location = new Point(530, 264);
+            searchBook.Location = new Point(530, 299);
             searchBook.Name = "searchBook";
             searchBook.Size = new Size(100, 23);
             searchBook.TabIndex = 11;
@@ -167,11 +170,44 @@
             label5.TabIndex = 13;
             label5.Text = "Введите текст для поиска";
             // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(361, 373);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(111, 23);
+            btnReset.TabIndex = 14;
+            btnReset.Text = "Очистить поиск";
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
+            // 
+            // butnSave
+            // 
+            butnSave.Location = new Point(530, 335);
+            butnSave.Name = "butnSave";
+            butnSave.Size = new Size(115, 23);
+            butnSave.TabIndex = 15;
+            butnSave.Text = "Сохранить книгу";
+            butnSave.UseVisualStyleBackColor = true;
+            butnSave.Click += butnSave_Click;
+            // 
+            // butnLoad
+            // 
+            butnLoad.Location = new Point(530, 373);
+            butnLoad.Name = "butnLoad";
+            butnLoad.Size = new Size(112, 23);
+            butnLoad.TabIndex = 16;
+            butnLoad.Text = "Загрузить книгу";
+            butnLoad.UseVisualStyleBackColor = true;
+            butnLoad.Click += butnLoad_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1443, 450);
+            Controls.Add(butnLoad);
+            Controls.Add(butnSave);
+            Controls.Add(btnReset);
             Controls.Add(label5);
             Controls.Add(txtSearch);
             Controls.Add(searchBook);
@@ -208,5 +244,8 @@
         private Button searchBook;
         private TextBox txtSearch;
         private Label label5;
+        private Button btnReset;
+        private Button butnSave;
+        private Button butnLoad;
     }
 }
