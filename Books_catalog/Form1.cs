@@ -1,4 +1,4 @@
-using System.Text.Json;
+п»їusing System.Text.Json;
 using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Books_catalog
@@ -21,6 +21,7 @@ namespace Books_catalog
                 Year = int.TryParse(txtYear.Text, out int year) ? year : 0
 
             };
+
             _books.Add(book);
             RefreshList();
 
@@ -70,11 +71,11 @@ namespace Books_catalog
             {
                 string json = JsonSerializer.Serialize(_books, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText("books.json", json);
-                MessageBox.Show("Книги сохранены!");
+                MessageBox.Show("РљРЅРёРіРё СЃРѕС…СЂР°РЅРµРЅС‹!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при сохранении", ex.Message);
+                MessageBox.Show("РћС€РёР±РєР° РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё", ex.Message);
             }
         }
 
@@ -87,18 +88,18 @@ namespace Books_catalog
                     string json = File.ReadAllText("books.json");
                     _books = JsonSerializer.Deserialize<List<Book>>(json) ?? new List<Book>();
                     RefreshList();
-                    MessageBox.Show("Книги загружены!");
+                    MessageBox.Show("РљРЅРёРіРё Р·Р°РіСЂСѓР¶РµРЅС‹!");
 
                 }
                 else
                 {
-                    MessageBox.Show("Файл не найден.");
+                    MessageBox.Show("Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ.");
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при загрузке: " + ex.Message);
+                MessageBox.Show("РћС€РёР±РєР° РїСЂРё Р·Р°РіСЂСѓР·РєРµ: " + ex.Message);
             }
 
         }
